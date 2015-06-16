@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'producteca2PhilipsApp'
+angular.module 'producteca2colppyApp'
 .controller 'AdminCtrl', ($scope, $http, Auth, User) ->
 
   $http.get '/api/users'

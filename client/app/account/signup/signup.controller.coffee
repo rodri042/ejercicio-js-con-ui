@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'producteca2PhilipsApp'
+angular.module 'producteca2colppyApp'
 .controller 'SignupCtrl', ($scope, Auth, $location, $window) ->
   $scope.user = {}
   $scope.errors = {}
