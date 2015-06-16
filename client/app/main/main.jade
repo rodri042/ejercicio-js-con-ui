@@ -1,0 +1,16 @@
+div(ng-include='"components/navbar/navbar.html"')
+
+.container
+  .row(ng-show="lastSync")
+    h3
+      | Última subida:
+    h2
+      small {{ lastSync.date | date:'medium' }}
+
+  .row
+    h3
+      | Órdenes
+      button(class="btn btn-link", ng-click="sincronizar()", ng-disabled="isSincronizando") Subir ahora
+
+    textarea(class="form-control code", style="height: 50vh", wrap="off", disabled)
+      | {{ orders.file }}

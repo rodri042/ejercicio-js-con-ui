@@ -1,0 +1,10 @@
+.form-group
+  label Token Producteca
+  input.form-control(type='password', name='parsimotionToken', ng-model='settings.parsimotionToken')
+
+  .panel.panel-default(ng-show="user")
+    .panel-heading
+      h3.panel-title {{ user.company.name }}
+
+p.help-block  {{ message }}
+button.btn.btn-primary(type='submit', ng-disabled="submitted") Guardar
