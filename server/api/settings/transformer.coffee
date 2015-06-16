@@ -29,4 +29,8 @@ class Transformer
 
 module.exports = new Transformer [
   from: "tokens.parsimotion", to: "parsimotionToken"
+,
+  from: "tokens.colppy.username", to: "colppyUsername"
+,
+  from: "tokens.colppy.password", to: "colppyPassword"
 ]

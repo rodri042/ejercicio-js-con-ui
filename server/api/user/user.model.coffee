@@ -23,9 +23,13 @@ UserSchema = new Schema
   provider: String
   providerId: Number
   salt: String
+
   tokens:
     dropbox: String
     parsimotion: String
+    colppy:
+      username: String
+      password: String
 
   lastSync:
     date: Date
@@ -139,9 +143,5 @@ UserSchema.methods =
     return ""  if not password or not @salt
     salt = new Buffer(@salt, "base64")
     crypto.pbkdf2Sync(password, salt, 10000, 64).toString "base64"
-
-  getExporter: ->
-    exporter = require("../../domain/colppyExporter")
-    new exporter @
 
 module.exports = mongoose.model("User", UserSchema)
