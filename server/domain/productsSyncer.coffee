@@ -11,3 +11,28 @@ class ProductsSyncer
   constructor: (@user, @settings)->
     @colppyApi = new ColppyApi config.colppy
     @productecaApi = new ProductecaApi accessToken: config.producteca.uri
+
+  syncAdjustments: =>
+    @getAdjustments().then (adjustments) =>
+        console.log "✔ adjustments."
+
+        @productecaApi.getProducts().then (products) =>
+          console.log "✔ products."
+
+          new Syncer(@productecaApi, @settings, products)
+            .execute(adjustments).then (results) =>
+              console.log "✔ sync."
+              console.log JSON.stringify results
+    .catch (error) =>
+      console.error "✘ something went wrong:"
+      console.error JSON.stringify error
+
+  getAdjustments: =>
+    @colppyApi.login(@user.tokens.colppy).then =>
+      @colppyApi.getLastCompany().then (company) =>
+        @colppyApi.getProducts(company) =>
+          company.map (it) => new Adjustment
+            identifier: it.idItem
+            name: it.descripcion
+            precio: it.precioVenta.replace ",", "."
+            stock: it.disponibilidad

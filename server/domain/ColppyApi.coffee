@@ -23,17 +23,16 @@ class ColppyApi
       usuario: username
       password: md5(password)
     ).then ({claveSesion}) =>
-      usuario: username
-      claveSesion: claveSesion
+      @session = usuario: username, claveSesion: claveSesion
 
   # Get the last company of the user
-  getLastCompany: (session) =>
+  getLastCompany: (session = @session) =>
     @_doRequest({ service: "Empresa", method: "listar_empresa" },
       {}, session
     ).then (companies) => _.last companies
 
   # Get all the products
-  getProducts: (company, session) =>
+  getProducts: (company, session = @session) =>
     @_doRequest { service: "Inventario", method: "listar_itemsinventario" },
       {
         idEmpresa: company.IdEmpresa
