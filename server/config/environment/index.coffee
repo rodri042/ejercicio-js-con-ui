@@ -45,6 +45,10 @@ all =
   parsimotion:
     uri: process.env.PARSIMOTION_URI or "http://api.producteca.com"
 
+  colppy:
+    username: process.env.COLPPY_API_USERNAME
+    password: process.env.COLPPY_API_PASSWORD
+
 # Export the config object based on the NODE_ENV
 # ==============================================
 module.exports = _.merge(all, require("./" + process.env.NODE_ENV + ".coffee") or {})

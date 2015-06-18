@@ -31,6 +31,13 @@ UserSchema = new Schema
       username: String
       password: String
 
+  settings:
+    synchro:
+      stocks: Boolean
+      prices: Boolean
+    priceList: String
+    warehouse: String
+
   lastSync:
     date: Date
 
