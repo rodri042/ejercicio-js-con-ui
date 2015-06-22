@@ -1,4 +1,5 @@
 # Producteca->colppy
+[![Build Status](https://semaphoreci.com/api/v1/projects/f3b4e1f2-dc1d-4ed2-9cd3-9b74dd2af6db/462640/badge.svg)](https://semaphoreci.com/andreskir/producteca2colppy)      
 
 ## Setup
 
