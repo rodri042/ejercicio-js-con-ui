@@ -5,14 +5,17 @@ Adjustment = SDK.Sync.Adjustment
 Syncer = SDK.Sync.Syncer
 config = require("../config/environment")
 
-module.exports = new
+module.exports =
 
 class ProductsSyncer
   constructor: (@user, @settings)->
     @colppyApi = new ColppyApi config.colppy
-    @productecaApi = new ProductecaApi accessToken: config.producteca.uri
+    @productecaApi = new ProductecaApi
+      accessToken: @user.tokens.parsimotion
+      url: config.parsimotion.uri
+    accessToken: config.parsimotion.uri
 
-  syncAdjustments: =>
+  sync: =>
     @getAdjustments().then (adjustments) =>
         console.log "✔ adjustments."
 
@@ -30,8 +33,8 @@ class ProductsSyncer
   getAdjustments: =>
     @colppyApi.login(@user.tokens.colppy).then =>
       @colppyApi.getLastCompany().then (company) =>
-        @colppyApi.getProducts(company) =>
-          company.map (it) => new Adjustment
+        @colppyApi.getProducts(company).then (products) =>
+          products.map (it) => new Adjustment
             identifier: it.idItem
             name: it.descripcion
             precio: it.precioVenta.replace ",", "."

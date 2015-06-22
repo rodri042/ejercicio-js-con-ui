@@ -8,7 +8,6 @@ module.exports = (app) ->
   # Insert routes below
   app.use "/api/files", require("./api/file")
   app.use "/api/users", require("./api/user")
-  app.use "/api/orders", require("./api/orders")
   app.use "/api/hooks/webjob", require("./api/hooks/webjob")
   app.use "/api/settings", require("./api/settings")
   app.use "/auth", require("./auth")

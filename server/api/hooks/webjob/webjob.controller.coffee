@@ -6,7 +6,7 @@ exports.notification = (req, res) ->
 
   User.findOneAsync(_id: req.body.userId)
     .then (user) =>
-      user.getExporter().uploadFileFromOrders()
+      user.getProductsSyncer().sync()
         .then (result) => res.send 200, result
     .catch => res.send 400, "There was a problem in the sync"
 

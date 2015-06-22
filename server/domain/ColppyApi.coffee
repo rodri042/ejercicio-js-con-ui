@@ -43,7 +43,7 @@ class ColppyApi
       }, session
 
   _doRequest: ({ service, method}, data, session = {}) =>
-    data = _.assign data, { sesion: session }
+    _.assign data, { sesion: session }
 
     req =
       url: @url
