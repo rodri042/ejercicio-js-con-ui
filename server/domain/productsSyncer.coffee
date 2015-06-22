@@ -4,6 +4,7 @@ ProductecaApi = SDK.Api
 Adjustment = SDK.Sync.Adjustment
 Syncer = SDK.Sync.Syncer
 config = require("../config/environment")
+_ = require("lodash")
 
 module.exports =
 
@@ -14,6 +15,8 @@ class ProductsSyncer
       accessToken: @user.tokens.parsimotion
       url: config.parsimotion.uri
     accessToken: config.parsimotion.uri
+
+    _.assign @settings, identifier: "barcode"
 
   sync: =>
     @getAdjustments().then (adjustments) =>

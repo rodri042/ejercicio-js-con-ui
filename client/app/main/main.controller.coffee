@@ -1,11 +1,5 @@
 'use strict'
 
-app.controller 'MainCtrl', ($scope, $http, Order, Auth) ->
+app.controller 'MainCtrl', ($scope, $http, Auth) ->
   Auth.getCurrentUser().$promise?.then (user) ->
     $scope.lastSync = user.lastSync
-
-  $scope.file = ""
-
-  $scope.sincronizar = ->
-    $scope.isSincronizando = true
-

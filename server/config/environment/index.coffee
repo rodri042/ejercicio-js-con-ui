@@ -23,14 +23,6 @@ all =
   secrets:
     session: process.env.SESSION_SECRET or "producteca2colppy-secret"
 
-
-  # List of user roles
-  userRoles: [
-    "guest"
-    "user"
-    "admin"
-  ]
-
   # MongoDB connection options
   mongo:
     options:
