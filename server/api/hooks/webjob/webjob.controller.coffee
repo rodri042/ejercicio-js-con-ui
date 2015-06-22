@@ -8,7 +8,7 @@ exports.notification = (req, res) ->
     .then (user) =>
       user.getProductsSyncer().sync()
         .then (result) => res.send 200, result
-    .catch => res.send 400, "There was a problem in the sync"
+    .catch (e) => res.send 400, e.message or e
 
 isSignatureValid = (req) ->
   req.headers["signature"] is process.env.WEBJOB_SIGNATURE
