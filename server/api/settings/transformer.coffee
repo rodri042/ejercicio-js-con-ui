@@ -28,9 +28,19 @@ class Transformer
       _.deepSet destination, destinationPropertyPath, newValue
 
 module.exports = new Transformer [
+  from: "settings.saved", to: "saved"
+,
   from: "tokens.parsimotion", to: "parsimotionToken"
 ,
   from: "tokens.colppy.username", to: "colppyUsername"
 ,
   from: "tokens.colppy.password", to: "colppyPassword"
+,
+  from: "settings.priceList", to: "priceList"
+,
+  from: "settings.warehouse", to: "warehouse"
+,
+  from: "settings.synchro", to: "synchro"
+,
+  from: "settings.identifier", to: "identifier"
 ]

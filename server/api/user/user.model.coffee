@@ -32,6 +32,7 @@ UserSchema = new Schema
       password: String
 
   settings:
+    saved: Boolean
     synchro:
       stocks: Boolean
       prices: Boolean

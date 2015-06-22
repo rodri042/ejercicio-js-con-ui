@@ -17,3 +17,7 @@ angular.module 'producteca2colppyApp'
   .state 'settings.tokens',
     url: '/tokens'
     templateUrl: 'app/account/settings/settings-tokens.html'
+
+  .state 'settings.syncer',
+    url: '/syncer'
+    templateUrl: 'app/account/settings/settings-syncer.html'

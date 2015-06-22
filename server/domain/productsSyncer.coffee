@@ -16,8 +16,6 @@ class ProductsSyncer
       url: config.parsimotion.uri
     accessToken: config.parsimotion.uri
 
-    _.assign @settings, identifier: "barcode"
-
   sync: =>
     @getAdjustments().then (adjustments) =>
         console.log "✔ adjustments."
