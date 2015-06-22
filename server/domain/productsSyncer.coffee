@@ -36,7 +36,7 @@ class ProductsSyncer
       @colppyApi.getLastCompany().then (company) =>
         @colppyApi.getProducts(company).then (products) =>
           products.map (it) => new Adjustment
-            identifier: it.idItem
+            identifier: it.codigo
             name: it.descripcion
-            precio: it.precioVenta.replace ",", "."
+            price: it.precioVenta.replace ",", "."
             stock: it.disponibilidad
