@@ -15,7 +15,6 @@
     "font-awesome": "~4.1.0",
     "lodash": "~2.4.1",
     "angular-ui-router": "~0.2.15",
-    "angular-rx": "Parsimotion/rx.angular.js#828097b96e85226655e2de245fd8b5e5791d119f",
     "js-xls": "~0.7.2"
   },
   "devDependencies": {

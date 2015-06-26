@@ -391,7 +391,7 @@ module.exports = (grunt) ->
 
       azureproduction:
         options:
-          remote: "https://#{process.env.AZURE_GIT_CREDENTIALS}@producteca2colppy.scm.azurewebsites.net:443/producteca2colppy.git"
+          remote: "https://#{process.env.AZURE_GIT_CREDENTIALS}@integration-seed.scm.azurewebsites.net:443/integration-seed.git"
           branch: "master"
 
       openshift:
