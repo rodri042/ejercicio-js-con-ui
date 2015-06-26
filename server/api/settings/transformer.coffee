@@ -31,6 +31,8 @@ class Transformer
       _.deepSet destination, destinationPropertyPath, newValue
 
 module.exports = new Transformer [
+  from: "settings.saved", to: "saved"
+,
   from: "example.property", to: "exampleProperty"
 ,
   from: "another.property", to: "another"

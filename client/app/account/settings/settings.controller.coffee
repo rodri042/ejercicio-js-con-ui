@@ -1,6 +1,6 @@
 'use strict'
 
-app.controller 'SettingsCtrl', ($scope, $state, observeOnScope, Settings, Producteca) ->
+app.controller 'SettingsCtrl', ($scope, $state, Settings, Producteca) ->
   $scope.settings = Settings.query()
 
   $state.go "settings.step1"
