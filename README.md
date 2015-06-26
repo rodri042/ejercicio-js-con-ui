@@ -22,14 +22,13 @@ Crear `/server/config/local.env.coffee` con:
 module.exports =
  DOMAIN: "http://localhost:9000"
  SESSION_SECRET: "***"
- DROPBOX_ID: "***"
- DROPBOX_SECRET: "***"
+ VARIABLE: "***"
 
  # Control debug level for modules using visionmedia/debug
  DEBUG: ""
 ```
 
-Los valores de estos atributos son secreto de estado, pero pueden obtenerse desde la sección de variables de entorno del hosting.
+Los valores de estos atributos son secretos, por eso este archivo se encuentra ignorado en el versionado.
 
 ## Servidor
 
