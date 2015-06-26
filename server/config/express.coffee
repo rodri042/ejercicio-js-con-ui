@@ -32,7 +32,7 @@ module.exports = (app) ->
   app.use bodyParser.json()
   app.use methodOverride()
   app.use cookieParser()
-  app.use cookieSession(keys: ["ashdvgfuyquodrhdgusirewj8oaesrtgef7rswje"])
+  app.use cookieSession(keys: [process.env.COOKIE_KEY])
   app.use passport.initialize()
   app.use passport.session()
 
