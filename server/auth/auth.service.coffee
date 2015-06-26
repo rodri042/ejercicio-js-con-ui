@@ -4,11 +4,11 @@ Attaches the user object to the request if authenticated
 Otherwise returns 403
 ###
 isAuthenticated = ->
-  
+
   # Validate jwt
-  
+
   # allow access_token to be passed through query parameter as well
-  
+
   # Attach user to request
   compose().use((req, res, next) ->
     req.headers.authorization = "Bearer " + req.query.access_token  if req.query and req.query.hasOwnProperty("access_token")
@@ -61,6 +61,7 @@ setTokenCookie = (req, res) ->
   req.session.user = req.user
   res.redirect "/"
   return
+
 "use strict"
 mongoose = require("mongoose")
 passport = require("passport")

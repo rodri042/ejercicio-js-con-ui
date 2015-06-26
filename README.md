@@ -1,4 +1,5 @@
-# Producteca->{integrationName}
+# integration-seed
+Please, replace the string "integration-seed" with the name you want, in all the project.
 
 ## Setup
 

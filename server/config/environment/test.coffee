@@ -5,4 +5,4 @@
 
 # MongoDB connection options
 module.exports = mongo:
-  uri: "mongodb://localhost/producteca2colppy-test"
+  uri: "mongodb://localhost/integration-seed-test"

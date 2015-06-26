@@ -5,7 +5,7 @@ exports.index = (req, res) ->
   res.send 200, Transformer.toDto req.user
 
 exports.env = (req, res) ->
-  res.send 200, { apiUrl: config.parsimotion.uri }
+  res.send 200, { apiUrl: config.producteca.uri }
 
 exports.update = (req, res) ->
   Transformer.updateModel req.user, req.body

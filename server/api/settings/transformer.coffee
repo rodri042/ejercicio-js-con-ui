@@ -1,6 +1,9 @@
 _ = require("lodash")
 _.mixin require("lodash-deep")
 
+###
+This is a transformer between the model and the DTO that the settings will use
+###
 class Transformer
   constructor: (@mappings) ->
 
@@ -28,19 +31,7 @@ class Transformer
       _.deepSet destination, destinationPropertyPath, newValue
 
 module.exports = new Transformer [
-  from: "settings.saved", to: "saved"
+  from: "example.property", to: "exampleProperty"
 ,
-  from: "tokens.parsimotion", to: "parsimotionToken"
-,
-  from: "tokens.colppy.username", to: "colppyUsername"
-,
-  from: "tokens.colppy.password", to: "colppyPassword"
-,
-  from: "settings.priceList", to: "priceList"
-,
-  from: "settings.warehouse", to: "warehouse"
-,
-  from: "settings.synchro", to: "synchro"
-,
-  from: "settings.identifier", to: "identifier"
+  from: "another.property", to: "another"
 ]

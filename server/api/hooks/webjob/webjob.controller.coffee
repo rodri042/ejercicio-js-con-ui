@@ -6,8 +6,8 @@ exports.notification = (req, res) ->
 
   User.findOneAsync(_id: req.body.userId)
     .then (user) =>
-      user.getProductsSyncer().sync()
-        .then (result) => res.send 200, result
+      res.send 200
+      # do something in the webjob
     .catch (e) => res.send 400, e.message or e
 
 isSignatureValid = (req) ->

@@ -1,5 +1,5 @@
 {
-  "name": "producteca2colppy",
+  "name": "integration-seed",
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {

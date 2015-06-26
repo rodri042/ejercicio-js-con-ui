@@ -21,7 +21,7 @@ all =
 
   # Secret for session, you will want to change this and make it an environment variable
   secrets:
-    session: process.env.SESSION_SECRET or "producteca2colppy-secret"
+    session: process.env.SESSION_SECRET or "integration-seed-secret"
 
   # MongoDB connection options
   mongo:
@@ -29,17 +29,11 @@ all =
       db:
         safe: true
 
-  dropbox:
-    clientID: process.env.DROPBOX_ID or "id"
-    clientSecret: process.env.DROPBOX_SECRET or "secret"
-    callbackURL: (process.env.DOMAIN or "") + "/auth/dropbox/callback"
-
-  parsimotion:
-    uri: process.env.PARSIMOTION_URI or "http://api.producteca.com"
-
-  colppy:
-    username: process.env.COLPPY_API_USERNAME
-    password: process.env.COLPPY_API_PASSWORD
+  producteca:
+    uri: process.env.PRODUCTECA_API or "http://api.producteca.com"
+    clientID: process.env.PRODUCTECA_CLIENTID or "id"
+    clientSecret: process.env.PRODUCTECA_CLIENTSECRET or "secret"
+    callbackURL: (process.env.DOMAIN or "") + "/auth/producteca/callback"
 
 # Export the config object based on the NODE_ENV
 # ==============================================
