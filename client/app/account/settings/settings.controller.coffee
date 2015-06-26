@@ -6,6 +6,7 @@ app.controller 'SettingsCtrl', ($scope, $state, observeOnScope, Settings, Produc
   $state.go "settings.step1"
   $scope.settings.$promise.then (settings) =>
     if not settings.saved
+      ;
       # set to settings some default values
 
   $scope.save = (form) ->

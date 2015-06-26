@@ -1,3 +1,5 @@
+module.exports = require("express").Router()
+
 # "use strict"
 # express = require("express")
 # passport = require("passport")
