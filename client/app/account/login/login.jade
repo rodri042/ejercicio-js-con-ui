@@ -3,8 +3,10 @@ div(ng-include='"components/navbar/navbar.html"')
   .row
     .col-sm-12
       form.form(name='form', ng-submit='login(form)', novalidate='')
-        div
-          a.btn.btn-dropbox(href='', ng-click='loginOauth("producteca")')
-            i.fa.fa-dropbox
-            |  Iniciar sesión con Producteca
-          = ' '
+        h4
+          | Inicie sesión con:
+          br
+          //- hace frío
+          br
+          //- brrrrrr
+          a.btn.btn-producteca(href='', ng-click='loginOauth("producteca")')
