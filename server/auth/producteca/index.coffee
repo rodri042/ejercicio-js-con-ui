@@ -7,10 +7,10 @@ router = express.Router()
 
 router
 
-.get "/", passport.authenticate("dropbox-oauth2")
+.get "/", passport.authenticate("producteca")
 
-.get "/callback", passport.authenticate("dropbox-oauth2",
-  failureRedirect: "/signup"
+.get "/callback", passport.authenticate("producteca",
+  failureRedirect: "/"
   session: false
 ), auth.setTokenCookie
 
