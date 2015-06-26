@@ -2,10 +2,9 @@ should = require("chai").should()
 app = require("../../app")
 User = require("./user.model")
 user = new User(
-  provider: "local"
+  provider: "producteca"
   name: "Fake User"
   email: "test@test.com"
-  password: "password"
 )
 
 describe "User Model", ->
@@ -19,11 +18,11 @@ describe "User Model", ->
 
   it "should store the provider and its id", (done) ->
     new User(
-      provider: 'dropbox'
+      provider: 'producteca'
       providerId: 12345678
     ).save ->
       User.find {}, (err, users) ->
-        users[0].should.have.property "provider", "dropbox"
+        users[0].should.have.property "provider", "producteca"
         users[0].should.have.property "providerId", 12345678
 
         done()
@@ -45,9 +44,3 @@ describe "User Model", ->
     user.save (err) ->
       should.exist err
       done()
-
-  it "should authenticate user if password is valid", ->
-    user.authenticate("password").should.be.true
-
-  it "should not authenticate user if password is invalid", ->
-    user.authenticate("blah").should.not.be.true

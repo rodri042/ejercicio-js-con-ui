@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'producteca2colppyApp'
+angular.module 'integration-seed-app'
 .config ($stateProvider) ->
   $stateProvider
   .state 'main',

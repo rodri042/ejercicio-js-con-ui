@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'producteca2colppyApp'
+angular.module 'integration-seed-app'
 .controller 'LoginCtrl', ($scope, Auth, $location, $window) ->
   $scope.user = {}
   $scope.errors = {}

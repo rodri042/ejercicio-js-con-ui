@@ -1,12 +1,11 @@
 'use strict'
 
-window.app = angular.module 'producteca2colppyApp', [
+window.app = angular.module 'integration-seed-app', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'rx'
 ]
 .config ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) ->
   $urlRouterProvider

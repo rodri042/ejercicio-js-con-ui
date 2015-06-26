@@ -316,7 +316,7 @@ module.exports = (grunt) ->
     ngtemplates:
       options:
       # This should be the name of your apps angular module
-        module: "producteca2colppyApp"
+        module: "integration-seed-app"
         htmlmin:
           collapseBooleanAttributes: true
           collapseWhitespace: true

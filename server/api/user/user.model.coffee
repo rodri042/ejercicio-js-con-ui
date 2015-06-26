@@ -1,13 +1,12 @@
 "use strict"
 
 mongoose = require("mongoose")
-Promise = require "bluebird"
+Promise = require("bluebird")
 Promise.promisifyAll mongoose
 
 Schema = mongoose.Schema
-crypto = require("crypto")
 
-authTypes = ["dropbox"]
+authTypes = ["producteca"]
 
 UserSchema = new Schema
   name: String
@@ -19,47 +18,22 @@ UserSchema = new Schema
     type: String
     default: "user"
 
-  hashedPassword: String
   provider: String
   providerId: Number
-  salt: String
 
   tokens:
-    dropbox: String
-    parsimotion: String
-    colppy:
-      username: String
-      password: String
+    producteca: String
 
   settings:
     saved: Boolean
-    synchro:
-      stocks: Boolean
-      prices: Boolean
-    priceList: String
-    warehouse: String
-    identifier: String
-
-  lastSync:
-    date: Date
 
 ###*
 Virtuals
 ###
-UserSchema.virtual("password").set((password) ->
-  @_password = password
-  @salt = @makeSalt()
-  @hashedPassword = @encryptPassword(password)
-  return
-).get ->
-  @_password
-
-
 # Public profile information
 UserSchema.virtual("profile").get ->
   name: @name
   role: @role
-
 
 # Non-sensitive info we'll be putting in the token
 UserSchema.virtual("token").get ->
@@ -75,12 +49,6 @@ UserSchema.path("email").validate ((email) ->
   return true  if authTypes.indexOf(@provider) isnt -1
   email.length
 ), "Email cannot be blank"
-
-# Validate empty password
-UserSchema.path("hashedPassword").validate ((hashedPassword) ->
-  return true  if authTypes.indexOf(@provider) isnt -1
-  hashedPassword.length
-), "Password cannot be blank"
 
 # Validate email is not taken
 UserSchema.path("email").validate ((value, respond) ->
@@ -100,59 +68,13 @@ UserSchema.path("email").validate ((value, respond) ->
 validatePresenceOf = (value) ->
   value and value.length
 
-
-###*
-Pre-save hook
-###
-UserSchema.pre "save", (next) ->
-  return next()  unless @isNew
-  if not validatePresenceOf(@hashedPassword) and authTypes.indexOf(@provider) is -1
-    next new Error("Invalid password")
-  else
-    next()
-  return
-
-
 ###*
 Methods
 ###
+
 UserSchema.methods =
-
-  ###*
-  Authenticate - check if the passwords are the same
-
-  @param {String} plainText
-  @return {Boolean}
-  @api public
-  ###
-  authenticate: (plainText) ->
-    @encryptPassword(plainText) is @hashedPassword
-
-
-  ###*
-  Make salt
-
-  @return {String}
-  @api public
-  ###
-  makeSalt: ->
-    crypto.randomBytes(16).toString "base64"
-
-
-  ###*
-  Encrypt password
-
-  @param {String} password
-  @return {String}
-  @api public
-  ###
-  encryptPassword: (password) ->
-    return ""  if not password or not @salt
-    salt = new Buffer(@salt, "base64")
-    crypto.pbkdf2Sync(password, salt, 10000, 64).toString "base64"
-
-  getProductsSyncer: ->
-    Syncer = require("../../domain/productsSyncer")
-    new Syncer @, @settings
+  getSomething: ->
+    Something = try require("../../domain/something")
+    new Something @
 
 module.exports = mongoose.model("User", UserSchema)

@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'producteca2colppyApp'
+angular.module 'integration-seed-app'
 .factory 'User', ($resource) ->
   $resource '/api/users/:id/:controller',
     id: '@_id'

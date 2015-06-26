@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'producteca2colppyApp'
+angular.module 'integration-seed-app'
 .config ($stateProvider) ->
   $stateProvider
   .state 'login',
@@ -14,10 +14,10 @@ angular.module 'producteca2colppyApp'
     controller: 'SettingsCtrl'
     authenticate: true
 
-  .state 'settings.tokens',
-    url: '/tokens'
-    templateUrl: 'app/account/settings/settings-tokens.html'
+  .state 'settings.step1',
+    url: '/step1'
+    templateUrl: 'app/account/settings/settings-step1.html'
 
-  .state 'settings.syncer',
-    url: '/syncer'
-    templateUrl: 'app/account/settings/settings-syncer.html'
+  .state 'settings.step2',
+    url: '/step2'
+    templateUrl: 'app/account/settings/settings-step2.html'

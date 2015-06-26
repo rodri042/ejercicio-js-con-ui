@@ -3,20 +3,10 @@
 app.controller 'SettingsCtrl', ($scope, $state, observeOnScope, Settings, Producteca) ->
   $scope.settings = Settings.query()
 
-  $state.go "settings.tokens"
+  $state.go "settings.step1"
   $scope.settings.$promise.then (settings) =>
     if not settings.saved
-      settings.synchro = stocks: true, prices: true
-      settings.identifier = "barcode"
-
-  Producteca.then (Producteca) =>
-    observeOnScope $scope, "settings.parsimotionToken"
-    .filter ({newValue}) -> newValue?
-    .map ({newValue}) -> new Producteca newValue
-    .subscribe (producteca) ->
-      $scope.user = producteca.user()
-      $scope.priceLists = producteca.priceLists()
-      $scope.warehouses = producteca.warehouses()
+      # set to settings some default values
 
   $scope.save = (form) ->
     $scope.submitted = true

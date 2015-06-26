@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'producteca2colppyApp'
+angular.module 'integration-seed-app'
 .controller 'NavbarCtrl', ($scope, $location, Auth) ->
   $scope.menu = [
     title: 'Inicio'

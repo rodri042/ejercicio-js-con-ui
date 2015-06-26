@@ -9,10 +9,9 @@ validationError = (res, err) ->
 
 ###*
 Get list of users
-restriction: 'admin'
 ###
 exports.index = (req, res) ->
-  User.find {}, "-salt -hashedPassword", (err, users) ->
+  User.find {}, (err, users) ->
     return res.send(500, err)  if err
     res.json 200, users
     return
@@ -26,7 +25,6 @@ Creates a new user
 exports.create = (req, res, next) ->
   newUser = new User(req.body)
   newUser.provider = "local"
-  newUser.role = "user"
   newUser.save (err, user) ->
     return validationError(res, err)  if err
     token = jwt.sign(
@@ -67,35 +65,11 @@ exports.destroy = (req, res) ->
 
 
 ###*
-Change a users password
-###
-exports.changePassword = (req, res, next) ->
-  userId = req.user._id
-  oldPass = String(req.body.oldPassword)
-  newPass = String(req.body.newPassword)
-  User.findById userId, (err, user) ->
-    if user.authenticate(oldPass)
-      user.password = newPass
-      user.save (err) ->
-        return validationError(res, err)  if err
-        res.send 200
-        return
-
-    else
-      res.send 403
-    return
-
-  return
-
-
-###*
 Get my info
 ###
 exports.me = (req, res, next) ->
   userId = req.user._id
-  User.findOne
-    _id: userId
-  , "-salt -hashedPassword", (err, user) -> # don't ever give out the password or salt
+  User.findOne _id: userId, (err, user) ->
     return next(err)  if err
     return res.json(401)  unless user
     res.json user

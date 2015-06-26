@@ -3,7 +3,7 @@ $scope = null
 getController = null
 
 beforeEach ->
-  module "producteca2colppyApp"
+  module "integration-seed-app"
 
   inject ($controller, $rootScope, _$httpBackend_, observeOnScope) ->
     $httpBackend = _$httpBackend_
