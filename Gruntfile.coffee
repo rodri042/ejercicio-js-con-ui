@@ -31,7 +31,7 @@ module.exports = (grunt) ->
 
     express:
       options:
-        port: process.env.PORT or 9000
+        port: process.env.PORT or 9001
         #opts: ['node_modules/.bin/coffee']
         #uncomment if the "script" property needs to be compiled with coffee
         #                    |

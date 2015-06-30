@@ -6,6 +6,9 @@ exports.setup = (User, config) ->
     clientID: config.producteca.clientID
     clientSecret: config.producteca.clientSecret
     callbackURL: config.producteca.callbackURL
+    authorizationURL: config.producteca.authorizationURL
+    tokenURL: config.producteca.tokenURL
+    profileUrl: config.producteca.profileUrl
   , (accessToken, _, profile, done) ->
     User.findOne { provider: "producteca", providerId: profile.id }, (err, user) ->
       return done err if err
