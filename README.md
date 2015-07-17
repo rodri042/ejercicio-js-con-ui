@@ -8,7 +8,6 @@ Please, replace the string "integration-seed" with the name you want, in all the
 
 npm install
 bower install
-bundle install
 ```
 
 Crear `/server/config/local.env.coffee` con:
