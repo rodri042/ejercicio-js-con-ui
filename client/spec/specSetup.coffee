@@ -5,7 +5,7 @@ getController = null
 beforeEach ->
   module "integration-seed-app"
 
-  inject ($controller, $rootScope, _$httpBackend_, observeOnScope) ->
+  inject ($controller, $rootScope, _$httpBackend_) ->
     $httpBackend = _$httpBackend_
     $scope = $rootScope.$new()
 
@@ -17,6 +17,9 @@ beforeEach ->
       defaultDependencies =
         $scope: $scope
         $httpBackend: $httpBackend
-        observeOnScope: observeOnScope
 
       $controller name, (defaults defaultDependencies, dependencies)
+
+describe "remove me", ->
+  it "dummy", ->
+    expect(true).toBeTruthy()

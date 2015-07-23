@@ -417,8 +417,6 @@ module.exports = (grunt) ->
       ]
       test: [
         "coffee"
-        "jade"
-        "sass"
       ]
       debug:
         tasks: [
@@ -642,10 +640,7 @@ module.exports = (grunt) ->
       return grunt.task.run [
         "clean:server"
         "env:all"
-        "injector:sass"
         "concurrent:test"
-        "injector"
-        "autoprefixer"
         "karma"
       ]
 
