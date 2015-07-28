@@ -1,7 +1,7 @@
 # ejercicio-js-con-ui
 
 ## Ejercicio
-  El ejercicio se desarrolla con los archivos del directorio **client/app/main**.
+  El ejercicio se desarrolla con los archivos del directorio **client/app/main/deudores**.
 
 ### Parte 1: Jugando
   - Instalar todo (seguir las partes de **Setup del entorno** y **Setup de la aplicación**).
