@@ -1,5 +1,5 @@
-# integration-seed
-Please, replace the string "integration-seed" with the name you want, in all the project.
+# ejercicio-js-con-ui
+Please, replace the string "ejercicio-js-con-ui" with the name you want, in all the project.
 
 ## Setup
 

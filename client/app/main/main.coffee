@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'integration-seed-app'
+angular.module 'ejercicio-js-con-ui-app'
 .config ($stateProvider) ->
   $stateProvider
   .state 'main',

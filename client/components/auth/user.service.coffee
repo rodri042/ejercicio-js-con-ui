@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module 'integration-seed-app'
+angular.module 'ejercicio-js-con-ui-app'
 .factory 'User', ($resource) ->
   $resource '/api/users/:id/:controller',
     id: '@_id'

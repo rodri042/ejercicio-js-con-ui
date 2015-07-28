@@ -3,7 +3,7 @@ $scope = null
 getController = null
 
 beforeEach ->
-  module "integration-seed-app"
+  module "ejercicio-js-con-ui-app"
 
   inject ($controller, $rootScope, _$httpBackend_) ->
     $httpBackend = _$httpBackend_

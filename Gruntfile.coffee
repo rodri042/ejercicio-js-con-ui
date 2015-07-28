@@ -10,8 +10,8 @@ module.exports = (grunt) ->
     localConfig = {}
 
 
-  azureWebsite = "integration-seed" + if process.env.BRANCH_NAME is "master" then "" else "-#{process.env.BRANCH_NAME}"
-  azureGit = "#{azureWebsite}.scm.azurewebsites.net:443/integration-seed.git"
+  azureWebsite = "ejercicio-js-con-ui" + if process.env.BRANCH_NAME is "master" then "" else "-#{process.env.BRANCH_NAME}"
+  azureGit = "#{azureWebsite}.scm.azurewebsites.net:443/ejercicio-js-con-ui.git"
   remote = "https://#{process.env.AZURE_GIT_CREDENTIALS}@#{azureGit}"
 
   # Load grunt tasks automatically, when needed
@@ -326,7 +326,7 @@ module.exports = (grunt) ->
     ngtemplates:
       options:
       # This should be the name of your apps angular module
-        module: "integration-seed-app"
+        module: "ejercicio-js-con-ui-app"
         htmlmin:
           collapseBooleanAttributes: true
           collapseWhitespace: true
