@@ -1,5 +1,24 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  HOLAA
+  <h2>Deudores</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Nombre completo</th>
+      <th>Saldo</th>
+      <th>Comentario</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="deudor in deudores" ng-class="{ success: deudor.saldo >= 0, danger: deudor.saldo < 0 }">
+        <td>{{ deudor.nombre }}</td>
+        <td>{{ deudor.apellido }}</td>
+        <td>{{ deudor.nombreCompleto() }}</td>
+        <td>{{ deudor.saldo | currency }}</td>
+        <td>{{ deudor.comentario }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

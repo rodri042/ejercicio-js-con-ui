@@ -51,7 +51,7 @@
       <script src="bower_components/angular-resource/angular-resource.js"></script>
       <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
       <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="bower_components/lodash/lodash.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
       <!-- endbower -->
 
@@ -60,8 +60,10 @@
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
-          <script src="app/main/main.js"></script>
+          <script src="app/main.js"></script>
           <script src="components/navbar/navbar.js"></script>
+          <script src="app/main/deudores/deudor.js"></script>
+          <script src="app/main/deudores/main.controller.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->
 </body>
