@@ -34,10 +34,10 @@
     - Carlos tiene saldo **-4**
     - Pedro tiene saldo **-3**
     - => La deuda total es **-7**
-  Para esto:
-    - Hacer `git merge parte3` para actualizar la UI.
-    - Meter una función en el `scope` llamada `deudaTotal` que la calcule. Ayudarse de las funciones `filter` (de js) y `sum` (suma un array de números, por ejemplo `[1, 2, 3].sum()` devuelve **6**).
-    - Verificar que funcione.
+    - ===> Para esto:
+      - Hacer `git merge parte3` para actualizar la UI.
+      - Meter una función en el `scope` llamada `deudaTotal` que la calcule. Ayudarse de las funciones `filter` (de js) y `sum` (suma un array de números, por ejemplo `[1, 2, 3].sum()` devuelve **6**).
+      - Verificar que funcione.
   - Commitear.
 
 ## Setup del entorno
