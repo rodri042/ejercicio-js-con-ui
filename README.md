@@ -16,8 +16,8 @@
   git commit -m "Mensaje con resumen de los cambios realizados"
   ```
 
-  ### Parte 2: Agregando...
-  - ¿Estaría bueno que la interfaz permita agregar deudores, no? Yo lo hago por usted. Dejemos que yo me encargue del HTML y usted del Javascript: de esta forma, seremos un equipo. Por favor, ejecute este comando: `git merge parte2`.
+  ### Parte 2: ¿Y cómo los agrego?
+  - Estaría bueno que la interfaz permita agregar deudores, ¿no? Ok, yo lo hago por usted. Dejemos que yo me encargue del HTML y usted del Javascript: de esta forma, seremos un equipo. Por favor, ejecute este comando: `git merge parte2`.
   - Sí, sí, también saqué las columnas *Nombre* y *Apellido* para no ser redundante (ya que ya mostramos el nombre completo), eso no es importante.
   - El formulario para agregar deudores funciona de la siguiente forma:
     - Al escribir en los textboxes, modificará las propiedades `nombre`, `apellido` y `saldo` del `scope` con lo que ingresó el usuario (siempre como string).
@@ -26,6 +26,9 @@
   - Agregar una función `agregarDeudor` al objeto `scope` que instancie un Deudor con los datos ingresados, y lo agregue al array. ¡Ya funca!
   - Crear un método `debe` en el `Deudor` que retorne `true` si su saldo es negativo. Los que tienen saldo negativo serán mostrados en rojo en la lista.
   - Realice un *commit* en el repositorio con los cambios realizados.
+
+  ### Parte 3: Esto es un quilombo
+  - Está todo muy desordenado. Modificar el programa para que cada vez que se agregue un deudor, la lista se ordene de forma **decreciente** por `saldo`.
 
 ## Setup del entorno
 
