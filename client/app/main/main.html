@@ -5,20 +5,40 @@
 
   <table class="table table-striped">
     <thead>
-      <th>Nombre</th>
-      <th>Apellido</th>
       <th>Nombre completo</th>
       <th>Saldo</th>
       <th>Comentario</th>
     </thead>
     <tbody>
       <tr ng-repeat="deudor in deudores" ng-class="{ success: !deudor.debe(), danger: deudor.debe() }">
-        <td>{{ deudor.nombre }}</td>
-        <td>{{ deudor.apellido }}</td>
         <td>{{ deudor.nombreCompleto() }}</td>
         <td>{{ deudor.saldo | currency }}</td>
         <td>{{ deudor.comentario }}</td>
       </tr>
     </tbody>
   </table>
+
+  <div>
+    <form role="form" action="javascript:;" method="post">
+      <fieldset>
+        <div class="row">
+          <div class="col-md-4">
+            <input ng-model="nombre" class="form-control" placeholder="Ingrese nombre...">
+          </div>
+
+          <div class="col-md-4">
+            <input ng-model="apellido" class="form-control" placeholder="Ingrese apellido...">
+          </div>
+
+          <div class="col-md-2">
+            <input ng-model="saldo" class="form-control" placeholder="Ingrese saldo...">
+          </div>
+
+          <div class="col-md-2">
+            <button ng-click="agregarDeudor()" class="btn btn-primary full" type="submit">Agregar</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
 </div>
