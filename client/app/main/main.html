@@ -12,7 +12,7 @@
       <th>Comentario</th>
     </thead>
     <tbody>
-      <tr ng-repeat="deudor in deudores" ng-class="{ success: deudor.saldo >= 0, danger: deudor.saldo < 0 }">
+      <tr ng-repeat="deudor in deudores" ng-class="{ success: !deudor.debe(), danger: deudor.debe() }">
         <td>{{ deudor.nombre }}</td>
         <td>{{ deudor.apellido }}</td>
         <td>{{ deudor.nombreCompleto() }}</td>

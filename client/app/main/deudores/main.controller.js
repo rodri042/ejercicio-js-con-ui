@@ -1,9 +1,12 @@
 app.controller("MainCtrl", function($scope, Deudor) {
-  window.s = $scope;
+  window.scope = $scope;
 
 // ------------------------------
-  s.deudores = []
-  s.deudores.push(new Deudor("rodri", "alfonso"));
-  s.deudores.push(new Deudor("liz", "capuzzi"));
+  //scope es un objeto que comparten el controlador con la vista
+  //para que uno pueda leer lo que escribe el otro y viceversa
+
+  scope.deudores = []
+  scope.deudores.push(new Deudor("rodri", "alfonso"));
+  scope.deudores.push(new Deudor("liz", "capuzzi"));
 // ------------------------------
 });
