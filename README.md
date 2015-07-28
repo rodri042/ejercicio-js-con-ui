@@ -17,7 +17,7 @@
   ```
 
 ### Parte 2: ¿Y cómo los agrego?
-  - Estaría bueno que la interfaz permita agregar deudores, ¿no? Ok, yo lo hago por usted. Dejemos que yo me encargue del HTML y usted del Javascript: de esta forma, seremos un equipo. Por favor, ejecute este comando: `git merge parte2`.
+  - Estaría bueno que la interfaz permita agregar deudores, ¿no? Ok, yo lo hago por usted. Dejemos que yo me encargue del HTML y usted del Javascript: de esta forma, seremos un equipo. Por favor, ejecute este comando: `git merge origin/parte2`.
   - Sí, sí, también saqué las columnas *Nombre* y *Apellido* para no ser redundante (ya que ya mostramos el nombre completo), eso no es importante.
   - El formulario para agregar deudores funciona de la siguiente forma:
     - Al escribir en los textboxes, modificará las propiedades `nombre`, `apellido` y `saldo` del `scope` con lo que ingresó el usuario (siempre como string).
@@ -35,7 +35,7 @@
     - Pedro tiene saldo **-3**
     - => La deuda total es **-7**
     - ===> Para esto:
-      - Hacer `git merge parte3` para actualizar la UI.
+      - Hacer `git merge origin/parte3` para actualizar la UI.
       - Meter una función en el `scope` llamada `deudaTotal` que la calcule. Ayudarse de las funciones `filter` (de js) y `sum` (suma un array de números, por ejemplo `[1, 2, 3].sum()` devuelve **6**).
       - Verificar que funcione.
   - Commitear.
