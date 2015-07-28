@@ -15,11 +15,4 @@ div.navbar.navbar-default.navbar-static-top(ng-controller='NavbarCtrl')
 
       ul.nav.navbar-nav.navbar-right
         li
-          p.navbar-text Hola {{ getCurrentUser().name }}
-
-        li(ng-class='{active: isActive("/settings")}')
-          a(href='/settings')
-            span.glyphicon.glyphicon-cog
-
-        li
-          a(href='', ng-click='logout()') Cerrar sesión
+          p.navbar-text Hola!

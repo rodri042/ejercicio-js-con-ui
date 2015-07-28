@@ -1,7 +1,6 @@
 'use strict'
 
 window.app = angular.module 'ejercicio-js-con-ui-app', [
-  'ngCookies',
   'ngResource',
   'ngSanitize',
   'ui.router',

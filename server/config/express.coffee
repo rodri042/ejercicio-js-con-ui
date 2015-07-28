@@ -8,12 +8,9 @@ morgan = require("morgan")
 compression = require("compression")
 bodyParser = require("body-parser")
 methodOverride = require("method-override")
-cookieParser = require("cookie-parser")
-cookieSession = require("cookie-session")
 errorHandler = require("errorhandler")
 path = require("path")
 config = require("./environment")
-passport = require("passport")
 module.exports = (app) ->
   env = app.get("env")
   app.set "views", config.root + "/server/views"
@@ -31,10 +28,6 @@ module.exports = (app) ->
   app.use bodyParser.urlencoded(extended: false)
   app.use bodyParser.json()
   app.use methodOverride()
-  app.use cookieParser()
-  app.use cookieSession(keys: [process.env.COOKIE_KEY or "ejercicio-js-con-ui-cookie-key"])
-  app.use passport.initialize()
-  app.use passport.session()
 
   if "production" is env
     app.use favicon(path.join(config.root, "public", "favicon.ico"))

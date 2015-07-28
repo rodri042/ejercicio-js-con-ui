@@ -4,5 +4,4 @@
 # ===========================
 
 # MongoDB connection options
-module.exports = mongo:
-  uri: "mongodb://localhost/ejercicio-js-con-ui-test"
+module.exports = {}

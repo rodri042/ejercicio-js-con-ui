@@ -6,14 +6,7 @@ Main application file
 # Set default node environment to development
 process.env.NODE_ENV = process.env.NODE_ENV or "development"
 express = require("express")
-mongoose = require("mongoose")
 config = require("./config/environment")
-
-# Connect to database
-mongoose.connect config.mongo.uri, config.mongo.options
-
-# Populate DB with sample data
-require "./config/seed" if config.seedDB
 
 # Setup server
 app = express()
