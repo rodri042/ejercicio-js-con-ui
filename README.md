@@ -27,8 +27,18 @@
   - Crear un método `debe` en el `Deudor` que retorne `true` si su saldo es negativo. Los que tienen saldo negativo serán mostrados en rojo en la lista.
   - Realice un *commit* en el repositorio con los cambios realizados.
 
-  ### Parte 3: Esto es un quilombo
+  ### Parte 3: Esto es un quilombo de orden superior.
   - Está todo muy desordenado. Modificar el programa para que cada vez que se agregue un deudor, la lista se ordene de forma **decreciente** por `saldo`.
+  - Ahora quiero que muestre la deuda total **de los que deben** (es decir, sin contemplar las filas en verde). Ejemplo:
+    - Juan tiene saldo **23**
+    - Carlos tiene saldo **-4**
+    - Pedro tiene saldo **-3**
+    - => La deuda total es **-7**
+  Para esto:
+    - Hacer `git merge parte3` para actualizar la UI.
+    - Meter una función en el `scope` llamada `deudaTotal` que la calcule. Ayudarse de las funciones `filter` (de js) y `sum` (suma un array de números, por ejemplo `[1, 2, 3].sum()` devuelve **6**).
+    - Verificar que funcione.
+  - Commitear.
 
 ## Setup del entorno
 

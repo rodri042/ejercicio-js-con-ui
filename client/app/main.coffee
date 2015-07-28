@@ -7,3 +7,5 @@ angular.module 'ejercicio-js-con-ui-app'
     url: '/'
     templateUrl: 'app/main/main.html'
     controller: 'MainCtrl'
+
+Array::sum = -> _.sum @
