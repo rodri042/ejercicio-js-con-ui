@@ -5,12 +5,19 @@
 
   ### Parte 1: Jugando
   - Instalar todo (seguir las partes de **Setup del entorno** y **Setup de la aplicación**).
-  - Al ingresar se ve una lista incompleta de deudores.
+  - Correr la app y verificar que se vea una lista incompleta de deudores.
   - Modifique `main.controller.js` para agregar a *pedro picapiedra* a la lista de deudores, y corrobore que la interfaz muestra el cambio correctamente.
   - Modifique el constructor de `Deudor` para que en la instanciación del mismo, el nombre y el apellido queden capitalizados (con su primer letra en mayúsculas). Puede usar la función `_.capitalize(string)`, incluída en el proyecto.
   - Agregue un método al prototipo de `Deudor` llamado `nombreCompleto` que retorne el nombre y el apellido separados por un espacio. Verifique que se muestre en la interfaz.
-  - Ya que ahora aparece el nombre y apellido completo, elimine las columnas **Nombre** y **Apellido** de la tabla, editando `main.html`. Recuerde que tiene que eliminarlas tanto del *header* como del *body*.
+  - Ya que todo funciona, realice un *commit* en el repositorio en donde el mensaje sea el resumen de los cambios realizados:
 
+  ```bash
+  git add -A .
+  git commit -m "Mensaje con resumen de los cambios realizados"
+  ```
+
+  ### Parte 2: ¿Y el saldo?
+  - Ahora que tienen nombre completo, podemos borrar las columnas *Nombre* y *Apellido*, para no dar información redundante. Yo lo hago por usted. Dejemos que yo me encargue del HTML y usted del Javascript. De esta forma, seremos un equipo. Por favor, ejecute este comando: `git merge parte2`.
 
 ## Setup del entorno
 
